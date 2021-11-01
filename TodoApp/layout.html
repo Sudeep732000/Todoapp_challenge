@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./layout.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="./layout.js"></script>
+  </head>
+  <body>
+    <div class="banner">
+      <img src="./bg-desktop-dark.jpg" alt="backgroundimage" />
+    </div>
+    <div class="container">
+      <div class="header">
+        <div class="title">TODO</div>
+        <marquee
+          class="scroller"
+          width="60%"
+          height="30%"
+          direction="up"
+          scrollamount="1"
+          textcolor="white"
+          >Hi,Welcome to Today's Todo List</marquee
+        >
+        <div class="logo">
+          <img src="./brightness-high.svg" alt="logo_icon" />
+        </div>
+      </div>
+      <div class="Todo_space">
+        <div class="check">
+          <div class="check_mark1">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div class="todo_input">
+          <form onsubmit="addItem(event)">
+            <input
+              id="input_value"
+              type="text"
+              placeholder="Enter The New Todo...."
+            />
+          </form>
+        </div>
+      </div>
+      <div class="items_todo-wrapper">
+        <div class="items_wrapper"></div>
+        <div class="items_info">
+          <div class="info_left">
+            <span>Todo List</span>
+          </div>
+          <div class="info_middle">
+            <span class="active">All</span>
+            <span>Active</span>
+            <span>Completed Todo</span>
+          </div>
+          <div class="info_right" onclick="DelItem()">
+            <span>Clear Todo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
